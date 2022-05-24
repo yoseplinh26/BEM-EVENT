@@ -7,6 +7,9 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Free HTML Templates" name="keywords">
     <meta content="Free HTML Templates" name="description">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon">
@@ -35,6 +38,49 @@
    
     <script src="{{  asset('https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js') }} " integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <style>
+      .card {
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.2s ease-in-out;
+  box-sizing: 20px;
+  
+  margin-bottom:10px;
+  background-color:#FFF;
+  width:125px;
+  height:100px;
+  top:85%;
+  
+  
+}
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  width: 900px;
+ 
+
+  margin-left:-10px; (300/2)
+}
+.image{
+  width:60px;
+  height: 70px;
+}
+.card:hover {
+  box-shadow: 0 5px 5px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+/* .card > .card-inner {
+  padding:10px;
+  
+} */
+.col-sm-4{
+  flex-direction: row;
+}
+.card .header h2, h3 {
+  margin-bottom: 0px;
+  margin-top:0px;
+}
+.card .header {
+  margin-bottom:5px;
+}
+
   .navbar {
   padding: 0;
 }
@@ -120,18 +166,18 @@
   left: 100%;
   visibility: visible;
 }
-@media (max-width: 1366px) {
+/* @media (max-width: 1366px) {
   .navbar .dropdown .dropdown ul {
     left: -90%;
   }
   .navbar .dropdown .dropdown:hover > ul {
     left: -100%;
   }
-}
+} */
 
 .container {
   /* background:#3297BB; */
-  width: 1500px;
+  width: 1000px;
   
 }
 .container p{
@@ -147,6 +193,29 @@ font-size: 25px;
   background-size: cover;
 }
 
+.container-2{
+  width:300px;
+  height:300px;
+  position:absolute;
+  left:67%;
+  top:80%;
+  margin-left:-150px; (300/2)
+  /* margin-top:-120px; */
+}
+/* .container-3{
+ 
+  height:240px;
+  position:absolute;
+
+  top:135%;
+}  */
+p{
+  font-family: Comic Sans;
+  font-size: 20px;
+}
+h1{
+  font-family: Poppins;
+}
 </style>
 </head>
 
@@ -208,50 +277,159 @@ font-size: 25px;
                  </div>
 </div>
       
-<div class="container py-5">
-      <div class="jumbotron text-white" style="background-image: url({{asset('img/desain.jpeg')}});>
-        <h2 class="mb-4">
-          Welcome To Website <br>Event BEM ONLINE TICKETING
-        </h2>
-        <p class="mb-4">
-          Come and Join Us
-        </p>
+    <div class="jumbotron" style="background-image: url({{asset('img/desain.jpeg')}});>
+        <div class="container" >
+            <h1 class="display-4">Event BEM</h1>
+            <p class="lead">Welcome To Website Online BEM Ticketing</p>
+            <hr class="my-4">
+            <p>Let's Check It!</p>
+            
+        </div>
+    </div>
         
       </div>
     </div>
-    <div class="container-fluid pt-5">
-        <div class="row px-xl-1 pb-3">
-            <div class="col-lg-2 col-md-6 col-sm-6 pb-1">
-                <div class="d-flex align-items-center" style="padding: 30px;">
-              <img src="{{asset('img/masker.png')}}">
-                    <h5 class="font-weight-semi-bold m-0">Gunakan Masker</h5>
-                </div>
-            </div>
-            <div class="col-lg-2 col-md-6 col-sm-6">
-                <div class="d-flex align-items-center" style="padding: 30px;">
-                <img src="{{asset('img/jarak.png')}}">
-                    <h5 class="font-weight-semi-bold m-0">Menjaga Jarak</h5>
-                </div>
-            </div>
-            <div class="col-lg-2 col-md-6 col-sm-6 pb-1">
-                <div class="d-flex align-items-center" style="padding: 30px;">
-                <img src="{{asset('img/hand.png')}}">
-                    <h5 class="font-weight-semi-bold m-0">Membawa Handsanitizer</h5>
-                </div>
-            </div>
-            <div class="col-lg-2 col-md-6 col-sm-6 pb-1">
-                <div class="d-flex align-items-center" style="padding: 30px;">
-                <img src="{{asset('img/cek suhu.png')}}">
-                    <h5 class="font-weight-semi-bold m-0">Melakukan Cek Suhu</h5>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-6 pb-1">
-                <div class="d-flex align-items-center" style="padding: 30px;">
-                <img src="{{asset('img/batuk.png')}}">
-                    <h5 class="font-weight-semi-bold m-0">Menutup hidung jika batuk dan bersin</h5>
-                </div>
-            </div>
-        </div>
+    <div class="desc">
+      <h1>Apa yah tujuan <br>diadakannya Event BEM di IT DEL?</h1>
+      <p>Tujuan diadakan nya event yang ada di IT DEL adalah untuk menjalin hubungan<br>
+       sesama mahasiswa dikampus kita Institut Teknologi Del. Melalui landasan yang <br>
+       selalu kita terapkan yaitu 3M MarTuhan, MarRoha, MarBisuk sehingga pentingnya <br>
+       bagi mahasiwa dikampus dan diasrama tetap menjalin hubungan yang erat dan tali <br>
+       persahabatan yang kuat dengan pertemanan yang kuat akan menjadikan relasi yang <br>
+       baik pula kedepannya. Baik hubungan yang erat antara senior maupun junior dikampus.<br>
+      Selain mempererat keakraban sesama mahasiswa event ini juga dapat meningkatkan bakat<br>
+      yang dimiliki oleh mahasiswa. Dan melatih kepercayaan diri mahasiswa untuk menampilkan<br>
+       bakat yang dimiliki didepan banyak orang.</p>
+</div>
+<div class="container-2">
+
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+      <li data-target="#myCarousel" data-slide-to="3"></li>
+      <li data-target="#myCarousel" data-slide-to="4"></li>
+
+    </ol>
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" weight="400px" width="350px">
+      <div class="item active">
+        <img src="{{asset('img/fesbud.jpeg')}}" alt="Festival Budaya" style="width:100%;">
+      </div>
+
+      <div class="item">
+        <img src="{{asset('img/pentas.jpeg')}}" alt="Pentas Budaya" style="width:100%;">
+      </div>
+    
+      <div class="item">
+        <img src="{{asset('img/podcast.png')}}" alt="Festival Budaya" style="width:100%;">
+      </div>
+      <div class="item">
+        <img src="{{asset('img/MUSIC CORNER.png')}}" alt="Music Corner" style="width:100%;">
+      </div>
+      <div class="item">
+        <img src="{{asset('img/KOPI SORE.png')}}" alt="Kopi Sore" style="width:100%;">
+      </div>
     </div>
     
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
+</div>
+</div>
+
+</div>
+    <div class="flex-container">
+    <div class="col-sm-4">
+  <div class="card">
+    <div class="image">
+      
+    </div>
+    <div class="card-inner">
+      <div class="header">
+      <img src="{{asset('img/masker.png')}}" />
+        <h5>Gunakan Masker</h5>
+      
+    </div>
+    
+      </div>
+  </div>
+</div>
+<div class="flex-container">
+    <div class="col-sm-4">
+  <div class="card">
+    <div class="image">
+      
+    </div>
+    <div class="card-inner">
+      <div class="header">
+      <img src="{{asset('img/jarak.png')}}" />
+        <h6>Menjaga <br>Jarak</h6>
+      
+    </div>
+    
+      </div>
+  </div>
+</div>
+<div class="flex-container">
+    <div class="col-sm-4">
+  <div class="card">
+    <div class="image">
+      
+    </div>
+    <div class="card-inner">
+      <div class="header">
+      <img src="{{asset('img/batuk.png')}}" />
+        <h5>Menutup hidung jika batuk bersin</h5>
+      
+    </div>
+    
+      </div>
+  </div>
+</div>
+<div class="flex-container">
+    <div class="col-sm-4">
+  <div class="card">
+    <div class="image">
+      
+    </div>
+    <div class="card-inner">
+      <div class="header">
+      <img src="{{asset('img/hand.png')}}" />
+        <h5>Membawa Handsinitizer</h5>
+      
+    </div>
+    
+      </div>
+  </div>
+</div>
+<div class="flex-container">
+    <div class="col-sm-4">
+  <div class="card">
+    <div class="image">
+      
+    </div>
+    <div class="card-inner">
+      <div class="header">
+      <img src="{{asset('img/cek suhu.png')}}" />
+        <h5>Melakukan cek suhu</h5>
+      
+    </div>
+    
+      </div>
+  </div>
+</div>
+    </div>
+</div>
+
+
 </body> 
