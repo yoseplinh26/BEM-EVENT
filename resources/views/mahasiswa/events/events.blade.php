@@ -183,14 +183,11 @@
 </div>
     <!-- Navbar End -->
 
-
-    
-
     <!-- ======= Why Us Section ======= -->
         <div id="header-carousel" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner">
-                        <div class="carousel-item active" style="height: 1010px;">
-                        <img src="{{asset('img/9.jpg')}}" width="550px" height="550px">
+                        <div class="carousel-item active" style="height: 700px;">
+                        <img src="{{asset('img/9.jpg')}}" width="3500px" height="350px">
                             <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                                 <div class="p-3" style="max-width: 100px;">
                                    
