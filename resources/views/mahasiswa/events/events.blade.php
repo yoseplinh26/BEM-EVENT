@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Events BEM Online Ticketing {{ $title }}</title>
+    <title>Events BEM Online Ticketing</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Free HTML Templates" name="keywords">
     <meta content="Free HTML Templates" name="description">
@@ -152,9 +152,9 @@
                             
                         <div class="navbar-nav mr-auto py-0">
                             <a href="{{ url('/') }}" class="nav-item nav-link">Home</a>
-                            <a href="{{ route('events') }}" class="nav-item nav-link active">Events</a>
-                            <a href="{{ route('tiket') }}" class="nav-item nav-link">Ticket</a>
-                            <a href="{{ route('team') }}" class="nav-item nav-link">Team</a>
+                            <a href="{{ route('events.events') }}" class="nav-item nav-link active">Events</a>
+                            <a href="{{ route('tiket.tiket') }}" class="nav-item nav-link">Ticket</a>
+                            <a href="{{ route('team.team') }}" class="nav-item nav-link">Team</a>
                         </div>
                                 @auth
                                 <li class="nav-item dropdown">
@@ -172,7 +172,7 @@
                                 </li>
                                 @else
                                 <li class="nav-item">
-                                  <a class="nav-link" href="{{ url('/login') }}">Login</a>
+                                  <a class="nav-link" href="{{ route('auth.index') }}">Login</a>
                                 </li>
                                 @endauth
                               </ul>                      

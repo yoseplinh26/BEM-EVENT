@@ -39,23 +39,27 @@ class BookingController extends Controller
     }
     public function tiket()
     {
-        return view('tiket', [
-            'title' => 'Tiket',
-            // 'active' => 'index'
-        ]);
+        // return view('tiket', [
+        //     'title' => 'Tiket',
+        //     // 'active' => 'index'
+        // ]);
+        return view('mahasiswa.tiket.tiket', ['title' => 'Tiket']);
     }
     public function events()
-    {
-        return view('events', [
-            'title' => 'Events',
-            // 'active' => 'index'
-        ]);
+    { 
+        // return view('events', [
+        //     'title' => 'Events',
+        //     // 'active' => 'index' 
+        // ]);
+        return view('mahasiswa.events.events');
     }
     public function team()
     {
-        return view('team', [
-            'title' => 'Team',
-            // 'active' => 'index'
-        ]);
+        // return view('team', [
+        //     'title' => 'Team',
+        //     // 'active' => 'index'
+        // ]);
+
+        return view('mahasiswa.team', ['title' => 'Team']);
     }
 }

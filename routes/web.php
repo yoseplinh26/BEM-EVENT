@@ -66,18 +66,19 @@ Route::middleware(['auth:web'])->group(function(){
 
 Route::prefix('mahasiswa')->group(function(){
     Route::get('index', [TransaksiController::class, 'index']);
-    // Route::get('/tiket', BookingController::class, 'tiket');
-    Route::get('/events', [BookingController::class, 'events']);
-    Route::get('team',[BookingController::class,'team']);
+    Route::get('tiket', [BookingController::class, 'tiket'])->name('tiket.tiket');
+    Route::get('events', [BookingController::class, 'events'])->name('events.events');
+    Route::get('team',[BookingController::class,'team'])->name('team.team');
 });
 
 
 // Route::get('/tiket',[BookingController::class,'ticket'])->name('tiket');
-// // Route::get('/tiketadmin',[IndexController::class,'tiketadmin'])->name('tiketadmin');
-// // Route::get('/notifkopi',[IndexController::class,'notifkopi'])->name('notifkopi');
+// Route::get('/tiketadmin',[IndexController::class,'tiketadmin'])->name('tiketadmin');
+// Route::get('/notifkopi',[IndexController::class,'notifkopi'])->name('notifkopi');
 // Route::get('/events',[BookingControllerController::class,'events'])->name('events');
-// // Route::get('/eventsadmin',[IndexController::class,'eventsadmin'])->name('eventsadmin');
+// Route::get('/eventsadmin',[IndexController::class,'eventsadmin'])->name('eventsadmin');
 // Route::get('/team',[BookingController::class,'team'])->name('team');
+
 
 
 
@@ -85,7 +86,6 @@ Route::prefix('admin')->group(function(){
     Route::get('/transaksi', [TransaksiController::class, 'index']);
     Route::resource('/kategori', KategoriController::class);
     Route::resource('acara', AcaraController::class);
-    
     
 });
 

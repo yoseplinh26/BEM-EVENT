@@ -447,10 +447,10 @@ h2 {
                             <ul class="navbar-nav ms-auto">
                             <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <div class="navbar-nav mr-auto py-0">
-                            <a href="{{ url('/') }}" class="nav-item nav-link">Home</a>
-                            <a href="{{ route('events') }}" class="nav-item nav-link">Events</a>
-                            <a href="{{ route('tiket') }}" class="nav-item nav-link">Ticket</a>
-                            <a href="{{ route('team') }}" class="nav-item nav-link active">Team</a>
+                          <a href="{{ url('/') }}" class="nav-item nav-link">Home</a>
+                          <a href="{{ route('events.events') }}" class="nav-item nav-link">Events</a>
+                          <a href="{{ route('tiket.tiket') }}" class="nav-item nav-link">Ticket</a>
+                          <a href="{{ route('team.team') }}" class="nav-item nav-link active">Team</a>
                         </div>
                                 @auth
                                 <li class="nav-item dropdown">
@@ -468,7 +468,7 @@ h2 {
                                 </li>
                                 @else
                                 <li class="nav-item">
-                                  <a class="nav-link" href="{{ url('/login') }}">Login</a>
+                                  <a class="nav-link" href="{{ route('auth.index') }}">Login</a>
                                 </li>
                                 @endauth
                               </ul>                      

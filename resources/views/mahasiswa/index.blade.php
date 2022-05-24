@@ -178,10 +178,10 @@ font-size: 25px;
                             <ul class="navbar-nav ms-auto">
                             
                         <div class="navbar-nav mr-auto py-0">
-                            <a href="{{ url('/') }}" class="nav-item nav-link active">Home</a>
-                            <a href="" class="nav-item nav-link">Events</a>
-                            <a href="" class="nav-item nav-link">Ticket</a>
-                            <a href="" class="nav-item nav-link">Team</a>
+                          <a href="{{ url('/') }}" class="nav-item nav-link active">Home</a>
+                          <a href="{{ route('events.events') }}" class="nav-item nav-link">Events</a>
+                          <a href="{{ route('tiket.tiket') }}" class="nav-item nav-link">Ticket</a>
+                          <a href="{{ route('team.team') }}" class="nav-item nav-link">Team</a>
                         </div>
                                 @auth
                                 <li class="nav-item dropdown">
@@ -204,8 +204,8 @@ font-size: 25px;
                                 @endauth
                               </ul>                      
                         </div>
-</nav>
-                    </div>
+                    </nav>
+                 </div>
 </div>
       
 <div class="container py-5">

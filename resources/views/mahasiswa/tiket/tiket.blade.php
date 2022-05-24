@@ -303,10 +303,10 @@ h3{
                             <ul class="navbar-nav ms-auto">
                             
                         <div class="navbar-nav mr-auto py-0">
-                            <a href="{{ url('/') }}" class="nav-item nav-link">Home</a>
-                            <a href="{{ route('events') }}" class="nav-item nav-link">Events</a>
-                            <a href="{{ route('tiket') }}" class="nav-item nav-link active">Ticket</a>
-                            <a href="{{ route('team') }}" class="nav-item nav-link">Team</a>
+                          <a href="{{ url('/') }}" class="nav-item nav-link">Home</a>
+                          <a href="{{ route('events.events') }}" class="nav-item nav-link">Events</a>
+                          <a href="{{ route('tiket.tiket') }}" class="nav-item nav-link active">Ticket</a>
+                          <a href="{{ route('team.team') }}" class="nav-item nav-link">Team</a>
                         </div>
                                 @auth
                                 <li class="nav-item dropdown">
@@ -324,7 +324,7 @@ h3{
                                 </li>
                                 @else
                                 <li class="nav-item">
-                                  <a class="nav-link" href="{{ url('/login') }}">Login</a>
+                                  <a class="nav-link" href="{{ route('auth.index') }}">Login</a>
                                 </li>
                                 @endauth
                               </ul>                      
@@ -350,7 +350,7 @@ h3{
     <img src="{{asset('img/KOPI SORE.png')}}" width="300px" height="350px">
 		<h3>Kopi Sore</h3>
         <center> <button>
-        <a href="{{ route('notifkopi') }}">Pesan Tiket</a>
+        <a href="">Pesan Tiket</a>
       </button>	</center>
 		</div>
   
