@@ -61,5 +61,32 @@ class BookingController extends Controller
         // ]);
 
         return view('mahasiswa.team', ['title' => 'Team']);
+
+    }
+    public function create()
+    {
+        return view('mahasiswa.pesan');
+    }
+
+    public function buat(Request $request)
+    {
+        try{
+            $pesan = Pesan::create($request->all());
+
+            $notification = array(
+                'message' => 'Event Berhasil Ditambahkan!',
+                'alert-type' => 'success'
+            );
+
+            return redirect()->route('pesan')->with($notification);
+
+        } catch (Exception $e) {
+            $notification = array(
+                'message' => $e->getMessage(),
+                'alert-type' => 'error'
+            );
+
+            return redirect()->route('pesan')->with($notification);
+        }
     }
 }

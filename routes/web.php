@@ -43,23 +43,39 @@ use App\Http\Controllers\admin\KategoriController;
 
 // Route::post('/logout', [AuthenticateController::class, 'logout']);
 Route::resource('pesans', '\App\Http\Controllers\PesanController'); 
+Route::get('login', 'App\Http\Controllers\AuthController@index')->name('login');
+Route::get('register', 'App\Http\Controllers\AuthController@register')->name('register');
+Route::post('simpanregister', 'App\Http\Controllers\AuthController@simpanregister')->name('simpanregister');
+Route::post('proses_login', 'App\Http\Controllers\AuthController@proses_login')->name('proses_login');
+Route::get('logout', 'App\Http\Controllers\AuthController@logout')->name('logout');
 
+Route::group(['middleware' => ['auth']], function () {
+    Route::group(['middleware' => ['cek_login:admin']], function () {
+    Route::resource('pesans', '\App\Http\Controllers\PesanController'); 
+    });
+    Route::group(['middleware' => ['cek_login:pelanggan']], function () {
+        Route::get('home', [BookingController::class, 'index'])->name('home');
+        Route::get('pesan', [BookingController::class, 'create'])->name('pesans');
+        Route::post('booking', [BookingController::class, 'buat'])->name('buat');
+
+    });
+});
 
 Route::get('/', [BookingController::class, 'index'])->name('home');
 Route::get('home', [BookingController::class, 'index'])->name('home');
-Route::get('auth',[AuthController::class, 'login'])->name('auth.index');
-Route::prefix('')->name('auth.')->group(function(){
-    Route::get('register',[AuthController::class, 'register'])->name('register');
-    Route::post('login',[AuthController::class, 'do_login'])->name('do_login');
-    Route::post('register',[AuthController::class, 'do_register'])->name('do_register');
-});
+// Route::get('auth',[AuthController::class, 'login'])->name('auth.index');
+// Route::prefix('')->name('auth.')->group(function(){
+//     Route::get('register',[AuthController::class, 'register'])->name('register');
+//     Route::post('login',[AuthController::class, 'do_login'])->name('do_login');
+//     Route::post('register',[AuthController::class, 'do_register'])->name('do_register');
+// });
 
 
-Route::middleware(['auth:web'])->group(function(){
-    // Route::redirect('/', 'Home', 301);
-    Route::get('Home', [BookingController::class, 'index'])->name('home');
-    Route::post('logout',[AuthController::class, 'do_logout'])->name('logout');
-});
+// Route::middleware(['auth:web'])->group(function(){
+//     // Route::redirect('/', 'Home', 301);
+//     Route::get('Home', [BookingController::class, 'index'])->name('home');
+//     Route::post('logout',[AuthController::class, 'do_logout'])->name('logout');
+// });
 
 
 // Route::get('/', [BookingController::class, 'index']);

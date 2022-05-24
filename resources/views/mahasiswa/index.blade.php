@@ -190,7 +190,7 @@ font-size: 25px;
                                   </a>
                                   <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <li>
-                                      <form action="{{ route('logout') }}" method="post">
+                                      <form action="{{ route('logout') }}">
                                         @csrf
                                         <button type="submit" class="dropdown-item">Logout</button> 
                                       </form>
@@ -199,7 +199,7 @@ font-size: 25px;
                                 </li>
                                 @else
                                 <li class="nav-item">
-                                  <a class="nav-link" href="{{ route('auth.index') }}">Login</a>
+                                  <a class="nav-link" href="{{ asset('login') }}">Login</a>
                                 </li>
                                 @endauth
                               </ul>                      

@@ -19,7 +19,7 @@ class CreatePesansTable extends Migration
             $table->string('tema');
             $table->string('lokasi');
             $table->integer('kuota');
-            $table->timestamp('tanggal');
+            $table->date('tanggal');
             $table->timestamps();
         });
     }
