@@ -10,7 +10,6 @@ use App\Http\Controllers\admin\TransaksiController;
 use App\Http\Controllers\admin\KategoriController;
 
 
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -43,6 +42,9 @@ use App\Http\Controllers\admin\KategoriController;
 
 
 // Route::post('/logout', [AuthenticateController::class, 'logout']);
+Route::resource('pesans', '\App\Http\Controllers\PesanController'); 
+
+
 Route::get('/', [BookingController::class, 'index'])->name('home');
 Route::get('home', [BookingController::class, 'index'])->name('home');
 Route::get('auth',[AuthController::class, 'login'])->name('auth.index');
