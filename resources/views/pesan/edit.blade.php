@@ -45,12 +45,28 @@
                             <label class="text-danger">{{ $message }}</label>
                             @enderror
                         </div>
+
                         <div class="form-group">
                             <input class="form-control" type="datetime" name="tanggal" placeholder="Tanggal" value="{{$pesan->tanggal}}">
                             @error('tanggal')
                             <label class="text-danger">{{ $message }}</label>
                             @enderror
                         </div>
+
+                        <div class="form-group">
+                            <strong>Pesan Image:</strong>
+                             <input type="file" name="image" class="form-control" placeholder="Post Title">
+                            @error('image')
+                              <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+                           @enderror
+                        </div>
+                        <div class="form-group">
+
+                            <img src="{{ Storage::url($pesan->image) }}" height="200" width="200" alt="" />
+              
+              
+                          </div>
+
                         <div class="form-group">
                             <a class="btn btn-danger mr-1" href='{{ route("pesans.index") }}' type="submit">Cancel</a>
                             <button class="btn btn-success" type="submit">Save</button>

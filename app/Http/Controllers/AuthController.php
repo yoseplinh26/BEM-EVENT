@@ -14,7 +14,7 @@ class AuthController extends Controller
     {
         if ($user = Auth::user()) {
             if ($user->level == 'admin') {
-                return redirect('pesans');
+                return redirect('dashboard');
             } elseif ($user->level == 'pelanggan') {
                  return redirect()->intended('home');
             } 
@@ -36,14 +36,14 @@ class AuthController extends Controller
             if (Auth::attempt($kredensil)) {
                 $user = Auth::user();
                 if ($user->level == 'admin') {
-                    return redirect('pesans');
+                    return redirect('dashboard');
                 } elseif ($user->level == 'pelanggan') {
                     return redirect()->intended('home');
                 }
                 return redirect()->intended('/');
             }
 
-        return redirect('login')
+        return redirect('/')
                                 ->withInput()
                                 ->withErrors(['login_gagal' => 'These credentials do not match our records.']);
     }
@@ -71,13 +71,13 @@ class AuthController extends Controller
             'remember_token' => Str::random(60),
         ]);
         
-         return redirect()->intended('login');
+         return redirect()->intended('/');
     }
 
     public function logout(Request $request)
     {
        $request->session()->flush();
        Auth::logout();
-       return Redirect('login');
+       return Redirect('/');
     }
 }

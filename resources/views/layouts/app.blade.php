@@ -52,7 +52,7 @@
                                 </li>
                             @endif
                         @else
-                        <form action="{{ route('logout') }}">
+                        <form action="{{ route('logout') }}" method="post">
                             @csrf
                             <button type="submit" class="dropdown-item">Logout</button> 
                           </form>

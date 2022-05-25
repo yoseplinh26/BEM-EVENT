@@ -52,6 +52,13 @@
                             <label class="text-danger">{{ $message }}</label>
                             @enderror
                         </div>
+                        
+                        <div class="form-group">
+                        <input type="file" name="image" class="form-control" placeholder="Post Title">
+                        @error('image')
+                         <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+                         @enderror
+                        </div>
 
                         <div class="form-group">
                             <a class="btn btn-danger mr-1" href='{{ route("pesans.index") }}' type="submit">Cancel</a>

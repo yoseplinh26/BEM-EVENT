@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('admin.layout.main')
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -33,6 +33,9 @@
                                  <th>
                                     Tanggal
                                  </th>
+                                 <th>
+                                    Gambar
+                                 </th>
 
                                 <th width="30px"> 
                                     Actions 
@@ -58,6 +61,7 @@
                                 <td>
                                     {{ $pesan->tanggal }}
                                 </td>
+                                <td><img src="{{ Storage::url($pesan->image) }}" height="75" width="75" alt="" /></td>
                                 <td>
                                     <a class="btn btn-success d-block mb-2" href='{{ route("pesans.edit", $pesan->id) }}'><i class="fa fa-pencil"></i> Edit</a>
 

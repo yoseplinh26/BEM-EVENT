@@ -2,7 +2,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
   <head>
     <link rel="icon" href="{{asset('css/Image/logo.jpeg')}} " />
-    <title>Login | AOTLIE</title>
+    <title>Login | Event BEM</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet" />
@@ -16,11 +16,13 @@
         <div class="row justify-content-center">
           <div class="col-md-7 col-lg-5">
             <div class="wrap">
-              <div class="img" style="background-image: url({{url('css/Image/admin.jpg')}} )"></div>
+              <div class="logo-cover">
+                <img src="{{asset('img/7.png')}}">
+               </div>
               <div class="login-wrap p-4 p-md-5">
                 <div class="d-flex">
                   <div class="w-100">
-                    <a href="{{asset('/')}} "><h3 class="mb-4">Log In</h3></a>
+                    <h3 class="mb-4">Log In</h3></a>
                   </div>
                 </div>
                 @if(session('error'))

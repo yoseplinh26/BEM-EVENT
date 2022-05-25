@@ -47,7 +47,7 @@
   background-color:#FFF;
   width:125px;
   height:100px;
-  top:85%;
+  top:200%;
   
   
 }
@@ -187,18 +187,18 @@ font-size: 25px;
 
 }
 .jumbotron{
-  width: 1300px;
-  height: 400px;
+  width: 2000px;
+  height: 700px;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .container-2{
-  width:300px;
-  height:300px;
+  width:400px;
+  height:30px;
   position:absolute;
-  left:67%;
-  top:80%;
+  left:55%;
+  top:105%;
   margin-left:-150px; (300/2)
   /* margin-top:-120px; */
 }
@@ -248,9 +248,9 @@ h1{
                             
                         <div class="navbar-nav mr-auto py-0">
                           <a href="{{ url('/') }}" class="nav-item nav-link active">Home</a>
-                          <a href="{{ route('events.events') }}" class="nav-item nav-link">Events</a>
-                          <a href="{{ route('tiket.tiket') }}" class="nav-item nav-link">Ticket</a>
-                          <a href="{{ route('team.team') }}" class="nav-item nav-link">Team</a>
+                          <a href="{{ asset('events') }}" class="nav-item nav-link">Events</a>
+                          <a href="{{ route('tiket') }}" class="nav-item nav-link">Ticket</a>
+                          <a href="{{ route('team') }}" class="nav-item nav-link">Team</a>
                         </div>
                                 @auth
                                 <li class="nav-item dropdown">
@@ -265,7 +265,6 @@ h1{
                                       </form>
                                     </li>
                                   </ul>
-                                </li>
                                 @else
                                 <li class="nav-item">
                                   <a class="nav-link" href="{{ asset('login') }}">Login</a>
@@ -277,32 +276,25 @@ h1{
                  </div>
 </div>
       
-    <div class="jumbotron" style="background-image: url({{asset('img/desain.jpeg')}});>
+    <div class="jumbotron" style="background-image: url({{asset('img/desain.jpeg')}})";>
         <div class="container" >
             <h1 class="display-4">Event BEM</h1>
             <p class="lead">Welcome To Website Online BEM Ticketing</p>
-            <hr class="my-4">
-            <p>Let's Check It!</p>
-            
+            <p>Let's Check It!</p>   
         </div>
     </div>
-        
-      </div>
-    </div>
-    <div class="desc">
-      <h1>Apa yah tujuan <br>diadakannya Event BEM di IT DEL?</h1>
-      <p>Tujuan diadakan nya event yang ada di IT DEL adalah untuk menjalin hubungan<br>
-       sesama mahasiswa dikampus kita Institut Teknologi Del. Melalui landasan yang <br>
-       selalu kita terapkan yaitu 3M MarTuhan, MarRoha, MarBisuk sehingga pentingnya <br>
-       bagi mahasiwa dikampus dan diasrama tetap menjalin hubungan yang erat dan tali <br>
-       persahabatan yang kuat dengan pertemanan yang kuat akan menjadikan relasi yang <br>
-       baik pula kedepannya. Baik hubungan yang erat antara senior maupun junior dikampus.<br>
-      Selain mempererat keakraban sesama mahasiswa event ini juga dapat meningkatkan bakat<br>
-      yang dimiliki oleh mahasiswa. Dan melatih kepercayaan diri mahasiswa untuk menampilkan<br>
-       bakat yang dimiliki didepan banyak orang.</p>
+    <div class="desc"><br><br>
+      <h1>Apa yah tujuan diadakannya Event BEM di IT DEL?</h1>
+      <p>Tujuan diadakannya event yang ada di IT DEL adalah untuk menjalin mepererat hubungan sesama <p>
+       mahasiswa dikampus kita Institut Teknologi Del. Melalui landasan yang selalu kita terapkan yaitu <p>
+       3M MarTuhan, MarRoha, MarBisuk sehingga pentingnya  bagi mahasiwa dikampus dan diasrama tetap <p>
+       menjalin hubungan yang erat dan tali persahabatan yang kuat dengan pertemanan yang kuat akan <p>
+       relasi yang baik pula ke depan. Baik hubungan yang erat antara senior maupun junior dikampus.<p>
+       Selain mempererat keakraban sesama mahasiswa event ini juga membantu meningkatkan bakat <p>
+       yang dimiliki oleh mahasiswa dan melatih kepercayaan diri. 
+     </p>
 </div>
 <div class="container-2">
-
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
@@ -314,7 +306,7 @@ h1{
 
     </ol>
     <!-- Wrapper for slides -->
-    <div class="carousel-inner" weight="400px" width="350px">
+    <div class="carousel-inner" weight="500px" width="350px">
       <div class="item active">
         <img src="{{asset('img/fesbud.jpeg')}}" alt="Festival Budaya" style="width:100%;">
       </div>

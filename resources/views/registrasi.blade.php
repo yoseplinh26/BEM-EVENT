@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <link rel="icon" href="{{asset('css/Image/logo.jpeg')}} " />
-    <title>Registrasi | AOTLIE</title>
+    <title>Registrasi</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet" />
@@ -17,7 +17,10 @@
         <div class="row justify-content-center">
           <div class="col-md-7 col-lg-6 col-xl-5">
             <div class="login-wrap p-4 p-md-5">
-              <a href="{{asset('/')}}"><h3 class="text-center mb-4">Daftar Akun Anda</h3></a>
+              <div class="logo-cover">
+                <img src="{{asset('img/7.png')}}">
+               </div>
+               <h3>Daftar Akun Anda</h3></a>
               <form action="{{ route('simpanregister') }}" class="signup-form" method="POST">
                 @csrf
                 <div class="form-group mb-3">

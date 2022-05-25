@@ -121,6 +121,106 @@
     left: -100%;
   }
 }
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,100,900);
+
+html,
+body {
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
+  height: 100%;
+  width: 100%; 
+  background: #FFF;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+}
+ 
+.wrapper {
+  display: table;
+  height: 100%;
+  width: 100%;
+}
+
+.container-fostrap {
+  display: table-cell;
+  padding: 1em;
+  text-align: center;
+  vertical-align: middle;
+}
+.fostrap-logo {
+  width: 100px;
+  margin-bottom:15px
+}
+h1.heading {
+  color: #fff;
+  font-size: 1.15em;
+  font-weight: 900;
+  margin: 0 0 0.5em;
+  color: #505050;
+}
+@media (min-width: 450px) {
+  h1.heading {
+    font-size: 3.55em;
+  }
+}
+@media (min-width: 760px) {
+  h1.heading {
+    font-size: 3.05em;
+  }
+}
+@media (min-width: 900px) {
+  h1.heading {
+    font-size: 3.25em;
+    margin: 0 0 0.3em;
+  }
+} 
+.card {
+  display: block; 
+    margin-bottom: 20px;
+    line-height: 1.42857143;
+    background-color: #fff;
+    border-radius: 2px;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12); 
+    transition: box-shadow .25s; 
+}
+.card:hover {
+  box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+}
+.img-card {
+  width: 100%;
+  height:200px;
+  border-top-left-radius:2px;
+  border-top-right-radius:2px;
+  display:block;
+    overflow: hidden;
+}
+.img-card img{
+  width: 100%;
+  height: 200px;
+  object-fit:cover; 
+  transition: all .25s ease;
+} 
+.card-content {
+  padding:15px;
+  text-align:left;
+}
+.card-title {
+  margin-top:0px;
+  font-weight: 700;
+  font-size: 1.65em;
+}
+.card-title a {
+  color: #000;
+  text-decoration: none !important;
+}
+.card-read-more {
+  border-top: 1px solid #D4D4D4;
+}
+.card-read-more a {
+  text-decoration: none !important;
+  padding:10px;
+  font-weight:600;
+  text-transform: uppercase
+}
 </style>
 </head>
 
@@ -150,12 +250,12 @@
                         <div class="navbar-nav ml-auto py-5">
                             <ul class="navbar-nav ms-auto">
                             
-                        <div class="navbar-nav mr-auto py-0">
-                            <a href="{{ url('/') }}" class="nav-item nav-link">Home</a>
-                            <a href="{{ route('events.events') }}" class="nav-item nav-link active">Events</a>
-                            <a href="{{ route('tiket.tiket') }}" class="nav-item nav-link">Ticket</a>
-                            <a href="{{ route('team.team') }}" class="nav-item nav-link">Team</a>
-                        </div>
+                              <div class="navbar-nav mr-auto py-0">
+                                <a href="{{ url('/') }}" class="nav-item nav-link ">Home</a>
+                                <a href="{{ asset('events') }}" class="nav-item nav-link active">Events</a>
+                                <a href="{{ route('tiket') }}" class="nav-item nav-link">Ticket</a>
+                                <a href="{{ route('team') }}" class="nav-item nav-link">Team</a>
+                              </div>
                                 @auth
                                 <li class="nav-item dropdown">
                                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -223,13 +323,8 @@
       <div class="container">
       <div class="row">                      
         <h4>Penjelasan Mengenai Event BEM</h4>
-        <div class="row gy-4">
-          <div class="col-lg-3">
-            <ul class="nav nav-tabs flex-column">
-              <li class="nav-item">
-                <a class="nav-link active show" data-bs-toggle="tab" href="#tab-1">Music Corner</a>
-              </li>
-              <li class="nav-item">
+  
+              {{-- <li class="nav-item">
                 <a class="nav-link" data-bs-toggle="tab" href="#tab-2">Kopi Sore</a>
               </li>
               <li class="nav-item">
@@ -240,91 +335,106 @@
               </li>
               <li class="nav-item">
                 <a class="nav-link" data-bs-toggle="tab" href="#tab-5">Podcast</a>
-              </li>
+              </li> --}}
             </ul>
           </div>
-          <div class="col-lg-9">
-            <div class="tab-content">
-              <div class="tab-pane active show" id="tab-1">
-                <div class="row gy-4">
-                  <div class="col-lg-8 details order-2 order-lg-1">
-                    <h3>Music Corner</h3>
-                    <p class="fst-italic">Event Music Corner merupakan salah satu kegiatan yang diselenggarakan oleh BEM. Event music corner ini merupakan event yang dilaksanakan oleh setiap mahasiswa Institut Teknologi DEL.
-                    </p>
-                    <p>Music corner dilaksanakan sesuai dengan namanya yaitu “Corner” yang dilaksanakan di corner yang ada di kampus It Del. Pada kegiatan ini setiap mahasiswa dapat menampilkan setiap bakat yang dimiliki. Banyak kegiatan yang diadakan seperti bernyanyi, standup comedy, bermain music dan masih banyak kegiatan lainnya.</p>
-                      <p> Tujuan dari diadakan nya event music corner ini adalah untuk meningkat kan bakat mahasiswa dan bermanfaat juga untuk membangun sosial hubungan antara sesama mahasiswa.
-                      </p>
-                  </div>
-                  <div class="col-lg-4 text-center order-1 order-lg-2">
-                    <img src="{{asset('img/MUSIC CORNER.jpeg')}}" alt="" class="img-fluid">
-                    
-                  </div>
+          <section class="wrapper">
+            <div class="container-fostrap">
+                <div>
+                    <img src="https://4.bp.blogspot.com/-7OHSFmygfYQ/VtLSb1xe8kI/AAAAAAAABjI/FxaRp5xW2JQ/s320/logo.png" class="fostrap-logo"/>
+                    <h1 class="heading">
+                        Bootstrap Card Responsive 
+                    </h1>
                 </div>
-              </div>
-              <div class="tab-pane" id="tab-2">
-                <div class="row gy-4">
-                  <div class="col-lg-8 details order-2 order-lg-1">
-                    <h3>Kopi Sore</h3>
-                    <p class="fst-italic">Festival event kopi sore merupakan kegiatan mahasiswa yang dilaksanakan oleh BEM. </p>
-                    <p>Sesuai dengan namanya pada festival ini mahasiswa akan menikmati minuman hangat sambil berkumpul bersama sesama mahasiswa. Pada festival ini tidak hanya menikmati kopi atau minuman hangat saja, mahasiwa juga disuguhkan dengan hiburan dipanggung yang biasanya dilaksanakan di lapangan napitupulu. Mahasiswa dapat bernyanyi bersama menikmati hangat nya minuman yang disediakan. Kegiatan ini juga menjalin hungungan mahasiswa menjadi erat dan tetap kuat. Mahasiswa dapat menikmati nikmat nya hidnagan minuman yang disediakan, berkumpul bersama teman antar sesama mahasiswa dan menikmati suasana sore hari indah. 
-                    </p>
-                    <p>Pada event ini juga ada games yang menarik juga untuk  diselenggarakan. Game ini dilaksanakan untuk menjaga dan mempererat kekompakan mahasiswa untuk meraih kemenangan. </p>
-                  </div>
-                  <div class="col-lg-4 text-center order-1 order-lg-2">
-                  <img src="{{asset('img/kopi sore.jpeg')}}" alt="" class="img-fluid">
-                  </div>
+                <div class="content">
+                    <div class="container">
+                        <div class="row">
+                            {{-- <div class="col-xs-12 col-sm-4">
+                                <div class="card">
+                                    <a class="img-card" href="http://www.fostrap.com/2016/03/bootstrap-3-carousel-fade-effect.html">
+                                    <img src="https://1.bp.blogspot.com/-Bii3S69BdjQ/VtdOpIi4aoI/AAAAAAAABlk/F0z23Yr59f0/s640/cover.jpg" />
+                                  </a>
+                                    <div class="card-content">
+                                        <h4 class="card-title">
+                                            <a href="http://www.fostrap.com/2016/03/bootstrap-3-carousel-fade-effect.html"> Bootstrap 3 Carousel FadeIn Out Effect
+                                          </a>
+                                        </h4>
+                                        <p class="">
+                                            Tutorial to make a carousel bootstrap by adding more wonderful effect fadein ...
+                                        </p>
+                                    </div>
+                                    <div class="card-read-more">
+                                        <a href="http://www.fostrap.com/2016/03/bootstrap-3-carousel-fade-effect.html" class="btn btn-link btn-block">
+                                            Read More
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-4">
+                                <div class="card">
+                                    <a class="img-card" href="http://www.fostrap.com/2016/03/5-button-hover-animation-effects-css3.html">
+                                    <img src="https://3.bp.blogspot.com/-bAsTyYC8U80/VtLZRKN6OlI/AAAAAAAABjY/kAoljiMALkQ/s400/material%2Bnavbar.jpg" />
+                                  </a>
+                                    <div class="card-content">
+                                        <h4 class="card-title">
+                                            <a href="http://www.fostrap.com/2016/02/awesome-material-design-responsive-menu.html"> Material Design Responsive Menu
+                                          </a>
+                                        </h4>
+                                        <p class="">
+                                            Material Design is a visual programming language made by Google. Language programming...
+                                        </p>
+                                    </div>
+                                    <div class="card-read-more">
+                                        <a href="https://codepen.io/wisnust10/full/ZWERZK/" class="btn btn-link btn-block">
+                                            Read More
+                                        </a>
+                                    </div>
+                                </div>
+                            </div> --}}
+                            @foreach($pesans as $tampil)
+
+                            <div class="col-xs-12 col-sm-4">
+                                <div class="card">
+                                    <a class="img-card" href="http://www.fostrap.com/2016/03/5-button-hover-animation-effects-css3.html">
+                                    <img src="{{ Storage::url($tampil->image) }}" />
+                                  </a>
+                                    <div class="card-content">
+                                        <h4 class="card-title">
+                                            <a href="http://www.fostrap.com/2016/03/5-button-hover-animation-effects-css3.html">
+                                          </a>
+                                        </h4>
+                                        <p class="">
+                                          {{$tampil->nama}}
+                                        </p>
+                                        <p class="Lokasi">
+                                          {{$tampil->tema}}
+                                        </p>
+                                        <p class="Lokasi">
+                                          {{$tampil->lokasi}}
+                                        </p>
+                                        <p class="">
+                                          {{$tampil->kuota}}
+                                        </p>
+                                        <p class="">
+                                          {{$tampil->tanggal}}
+                                        </p>
+                                    </div>
+          
+                                    <div class="card-read-more">
+                                        <a href="" class="btn btn-link btn-block">
+                                            Read More
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            @endforeach
+                        </div>
+                    </div>
                 </div>
-              </div>
-              <div class="tab-pane" id="tab-3">
-                <div class="row gy-4">
-                  <div class="col-lg-8 details order-2 order-lg-1">
-                    <h3>Festival Budaya</h3>
-                    <p class="fst-italic">Event Festival Budaya merupakan kegiatan yang diselenggarakan oleh BEM. Kegiatan ini sering dilaksanakan di Gedung Serbaguna Del.</p>
-                    <p>Kegiatan ini meruapakan event yang meriah dikarenakan seluruh mahasiswa dapat mengikuti event ini. Festival budaya ini juga sangat seru dan menarik juga dimana banyak kegiatan yang diadakan seperti bazaar, penampilan tor-tor batak, penampilan tari tari dari beberapa budaya, selain pertunjukan pertujukan yang diadakan, festival budaya juga mengadakan beberapa lomba yang sangat menarik yaitu lomba miniatur dan menggambar sketsa. Festival budaya ini sangat menarik untuk diikuti oleh mahasiswa. Tujuan diadakan nya festival ini adalah untuk tetap mencintai budaya terlebih budaya yang ada diwilayah kampus It Del yaitu batak.
-                    </p>
-                    <p>Selain untuk memelihara budaya batak saja event ini juga memelihara budaya budaya lain yang ada di Indonesia, mahasiswa juga dapat mengembangkan bakat yang dimiliki juga.</p>
-                  </div>
-                  <div class="col-lg-4 text-center order-1 order-lg-2">
-                  <img src="{{asset('img/fesbud.jpeg')}}" alt="" class="img-fluid">
-                  </div>
-                </div>
-              </div>
-              <div class="tab-pane" id="tab-4">
-                <div class="row gy-4">
-                  <div class="col-lg-8 details order-2 order-lg-1">
-                    <h3>Pentas Budaya</h3>
-                    <p class="fst-italic">Event pentas budaya ini dilaksanakan oleh BEM. Kegiatan ini dilangsungkan di gedung serbaguna Del. Pentas ini juga hampir sama dengan festival budaya.</p>
-                    <p>Tetapi pentas budaya ini juga tak kalah menarik juga, pada festival yang diselenggarakan ini terdapat acara Bazaar, fashion show, pameran, dan pertunjukan music juga yang dari semua kegiatan ini diselenggarakan oleh mahasiwa It Del. Selain itu juga pentas budaya ini mengadakan perlombaan perlombaan yang menarik juga yaitu perlombaan draw and paint, perlombaan scrabble yang mana ini di perlombaan yang diadakan ini melatih kekompakan mahasiswa dan kemampuan mahasiswa dibidang bahasa inggris juga yaitu perlombaan scrable.
-                    </p>
-                    <p> Banyak juga acara acara yang baru tentunya yang akan diakan oleh BEM yang dapat diikuti oleh setiap mahasiswa.</p>
-                  </div>
-                  <div class="col-lg-4 text-center order-1 order-lg-2">
-                  <img src="{{asset('img/pentas.jpeg')}}" alt="" class="img-fluid">
-                  </div>
-                </div>
-              </div>
-              <div class="tab-pane" id="tab-5">
-                <div class="row gy-4">
-                  <div class="col-lg-8 details order-2 order-lg-1">
-                    <h3>Podcast</h3>
-                    <p class="fst-italic">Podcast merupakan salah satu event yang dilaksanakan oleh BEM. Kegiatan podcast ini sangat 
-                      sering dilaksanakan pada saat perkuliahan dilakukan secara during.</p>
-                      <p>Podcast ini dilakukan oleh anggota panitia 
-                      depsendub yang biasanya event ini akan membahas mengenai depertemen seni dan budaya BEM yang ada di Institut Teknologi DEL. 
-                      Kegiatan podcast ini dilakukan secara during melalui zoom meeting. Setelah panitia BEM melakukan podcast melaui zoom, 
-                      selanjutnya panitia akan mengabadikan video podcast tersebut ke youtube agar setiap mahasiswa yang lain juga dapat
-                       mengakses podcast tersebut. </p>
-                    <p>Tujuan diadakan nya podcast ini adalah untuk tetap menjalin hubungan yang erat antar 
-                       mahasiswa dimana pun baik secara offline maupun online. Video podcast ini dapat diakses melalui akun resmi depsendub it del</p>
-                  </div>
-                  <div class="col-lg-4 text-center order-1 order-lg-2">
-                    <img src="{{asset('img/podcast.png')}}" alt="" class="img-fluid">
-                  </div>
-                </div>
-              </div>
             </div>
-          </div>
-        </div>
+        </section>
+        
+          
 
       </div>
     </section><!-- End Departments Section -->

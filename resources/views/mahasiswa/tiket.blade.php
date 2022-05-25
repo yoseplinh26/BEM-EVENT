@@ -302,12 +302,12 @@ h3{
                         <div class="navbar-nav ml-auto py-5">
                             <ul class="navbar-nav ms-auto">
                             
-                        <div class="navbar-nav mr-auto py-0">
-                          <a href="{{ url('/') }}" class="nav-item nav-link">Home</a>
-                          <a href="{{ route('events.events') }}" class="nav-item nav-link">Events</a>
-                          <a href="{{ route('tiket.tiket') }}" class="nav-item nav-link active">Ticket</a>
-                          <a href="{{ route('team.team') }}" class="nav-item nav-link">Team</a>
-                        </div>
+                              <div class="navbar-nav mr-auto py-0">
+                                <a href="{{ url('/') }}" class="nav-item nav-link">Home</a>
+                                <a href="{{ asset('events') }}" class="nav-item nav-link">Events</a>
+                                <a href="{{ route('tiket') }}" class="nav-item nav-link active">Ticket</a>
+                                <a href="{{ route('team') }}" class="nav-item nav-link">Team</a>
+                              </div>
                                 @auth
                                 <li class="nav-item dropdown">
                                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">

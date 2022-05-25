@@ -43,7 +43,7 @@ class BookingController extends Controller
         //     'title' => 'Tiket',
         //     // 'active' => 'index'
         // ]);
-        return view('mahasiswa.tiket.tiket', ['title' => 'Tiket']);
+        return view('mahasiswa.tiket', ['title' => 'Tiket']);
     }
     public function events()
     { 
@@ -51,7 +51,7 @@ class BookingController extends Controller
         //     'title' => 'Events',
         //     // 'active' => 'index' 
         // ]);
-        return view('mahasiswa.events.events');
+        return view('mahasiswa.events');
     }
     public function team()
     {

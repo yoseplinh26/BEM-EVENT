@@ -6,7 +6,7 @@ use App\Http\Controllers\AuthenticateController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\BookingController;
-use App\Http\Controllers\admin\TransaksiController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\admin\KategoriController;
 
 
@@ -43,67 +43,30 @@ use App\Http\Controllers\admin\KategoriController;
 
 // Route::post('/logout', [AuthenticateController::class, 'logout']);
 Route::resource('pesans', '\App\Http\Controllers\PesanController'); 
-Route::get('login', 'App\Http\Controllers\AuthController@index')->name('login');
+Route::get('/', 'App\Http\Controllers\AuthController@index')->name('login');
 Route::get('register', 'App\Http\Controllers\AuthController@register')->name('register');
 Route::post('simpanregister', 'App\Http\Controllers\AuthController@simpanregister')->name('simpanregister');
 Route::post('proses_login', 'App\Http\Controllers\AuthController@proses_login')->name('proses_login');
-Route::get('logout', 'App\Http\Controllers\AuthController@logout')->name('logout');
+Route::post('logout', 'App\Http\Controllers\AuthController@logout')->name('logout');
 
 Route::group(['middleware' => ['auth']], function () {
     Route::group(['middleware' => ['cek_login:admin']], function () {
     Route::resource('pesans', '\App\Http\Controllers\PesanController'); 
+    Route::get('dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
     });
-    Route::group(['middleware' => ['cek_login:pelanggan']], function () {
+
+
+
+ Route::group(['middleware' => ['cek_login:pelanggan']], function () {
         Route::get('home', [BookingController::class, 'index'])->name('home');
         Route::get('pesan', [BookingController::class, 'create'])->name('pesans');
         Route::post('booking', [BookingController::class, 'buat'])->name('buat');
-
+        Route::get('/index', [BookingController::class, 'index'])->name('home');
+        Route::get('home', [BookingController::class, 'index'])->name('home');
+        Route::get('tiket', [BookingController::class, 'tiket'])->name('tiket');
+        // Route::get('events', [BookingController::class, 'events'])->name('events');
+        Route::get('team',[BookingController::class,'team'])->name('team');
+        Route::get('events', [DashboardController::class,'show']);
     });
-});
-
-Route::get('/', [BookingController::class, 'index'])->name('home');
-Route::get('home', [BookingController::class, 'index'])->name('home');
-// Route::get('auth',[AuthController::class, 'login'])->name('auth.index');
-// Route::prefix('')->name('auth.')->group(function(){
-//     Route::get('register',[AuthController::class, 'register'])->name('register');
-//     Route::post('login',[AuthController::class, 'do_login'])->name('do_login');
-//     Route::post('register',[AuthController::class, 'do_register'])->name('do_register');
-// });
-
-
-// Route::middleware(['auth:web'])->group(function(){
-//     // Route::redirect('/', 'Home', 301);
-//     Route::get('Home', [BookingController::class, 'index'])->name('home');
-//     Route::post('logout',[AuthController::class, 'do_logout'])->name('logout');
-// });
-
-
-// Route::get('/', [BookingController::class, 'index']);
-// Route::post('/booking', [BookingController::class, 'store']);
-
-
-Route::prefix('mahasiswa')->group(function(){
-    Route::get('index', [TransaksiController::class, 'index']);
-    Route::get('tiket', [BookingController::class, 'tiket'])->name('tiket.tiket');
-    Route::get('events', [BookingController::class, 'events'])->name('events.events');
-    Route::get('team',[BookingController::class,'team'])->name('team.team');
-});
-
-
-// Route::get('/tiket',[BookingController::class,'ticket'])->name('tiket');
-// Route::get('/tiketadmin',[IndexController::class,'tiketadmin'])->name('tiketadmin');
-// Route::get('/notifkopi',[IndexController::class,'notifkopi'])->name('notifkopi');
-// Route::get('/events',[BookingControllerController::class,'events'])->name('events');
-// Route::get('/eventsadmin',[IndexController::class,'eventsadmin'])->name('eventsadmin');
-// Route::get('/team',[BookingController::class,'team'])->name('team');
-
-
-
-
-Route::prefix('admin')->group(function(){
-    Route::get('/transaksi', [TransaksiController::class, 'index']);
-    Route::resource('/kategori', KategoriController::class);
-    Route::resource('acara', AcaraController::class);
-    
 });
 

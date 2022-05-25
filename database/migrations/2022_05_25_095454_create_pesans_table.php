@@ -20,6 +20,7 @@ class CreatePesansTable extends Migration
             $table->string('lokasi');
             $table->integer('kuota');
             $table->date('tanggal');
+            $table->string('image');
             $table->timestamps();
         });
     }
