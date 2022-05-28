@@ -21,6 +21,15 @@ class DashboardController extends Controller
 
         return view('mahasiswa.events', $data);
     }
+
+    public function make()
+    {
+        $data['pesans'] = Pesan::orderBy('id','desc')->simplePaginate(5);
+
+        // return view('beritas.index', ['data'=>$data])->with('i',(request()->input('page',1) - 1) * 5);
+
+        return view('mahasiswa.tiket', $data);
+    }
 }
  
 

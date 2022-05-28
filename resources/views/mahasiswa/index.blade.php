@@ -249,7 +249,7 @@ h1{
                         <div class="navbar-nav mr-auto py-0">
                           <a href="{{ url('/') }}" class="nav-item nav-link active">Home</a>
                           <a href="{{ asset('events') }}" class="nav-item nav-link">Events</a>
-                          <a href="{{ route('tiket') }}" class="nav-item nav-link">Ticket</a>
+                          <a href="{{ asset('tiket') }}" class="nav-item nav-link">Ticket</a>
                           <a href="{{ route('team') }}" class="nav-item nav-link">Team</a>
                         </div>
                                 @auth
@@ -259,7 +259,7 @@ h1{
                                   </a>
                                   <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <li>
-                                      <form action="{{ route('logout') }}">
+                                      <form action="{{ asset('logout') }}">
                                         @csrf
                                         <button type="submit" class="dropdown-item">Logout</button> 
                                       </form>
